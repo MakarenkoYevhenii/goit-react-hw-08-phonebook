@@ -9,7 +9,62 @@ export const signup=createAsyncThunk(
             const result=await authApi.signup(data)
             return result
         } catch (error) {
+            console.log(error);
           return  rejectWithValue(error)
+        }
+    }
+)
+
+
+export const login=createAsyncThunk(
+    "auth/login",
+    async(data,{rejectWithValue})=>{
+        try {
+            const result=await authApi.login(data)
+            console.log(result);
+            return result
+        } catch (error) {
+            console.log(error);
+          return  rejectWithValue(error)
+        }
+    }
+)
+export const logout=createAsyncThunk(
+    "auth/logout",
+    async(_,{rejectWithValue})=>{
+        try {
+            const result=await authApi.logout()
+
+            return result
+        } catch (error) {
+            console.log(error);
+          return  rejectWithValue(error)
+        }
+    }
+)
+
+
+export const current = createAsyncThunk(
+    "auth/current",
+    async (_, {getState, rejectWithValue}) => {
+        console.log(getState);
+        try {
+            const {auth} = getState();
+            // if(!auth.token){
+            //     return rejectWithValue("Not autorization");
+            // }
+            const result = await authApi.getCurrent(auth.token);
+            return result;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+    {
+        condition: (_, {getState}) => {
+            const {auth} = getState();
+            if(!auth.token) {
+                return false;
+            }
         }
     }
 )

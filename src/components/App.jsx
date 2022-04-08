@@ -7,18 +7,20 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import {getAllContacts,getLoading} from "../redux/contacts/contacts-selectors"
 import { useState,useEffect } from 'react';
 import Loading from './Loading/Loading';
-import RegisterPage from '../components/RegisterPage/RegisterPage';
-
+import { current } from "../redux/auth/auth-operations";
+// import { useEffect } from "react"
+// import { useDispatch } from "react-redux"
+// import { current } from "./redux/auth/auth-operations"
 const App = () => {
     const [filter,setFilter]=useState('')
    
     const contacts=useSelector(getAllContacts,shallowEqual)
     const dispatch=useDispatch();
     const loading=useSelector(getLoading,shallowEqual)
-    console.log(loading);
     useEffect(() => {
       dispatch(operations.fetchContacts());
     }, [dispatch])
+    
    
     const addContact=(data)=> {
       const nameCheked=contacts.find((e)=>{
