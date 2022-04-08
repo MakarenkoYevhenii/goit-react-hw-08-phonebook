@@ -8,9 +8,11 @@ const initialState = {
 
 const RegisterPage = () => {
   const [form, setForm] = useState({...initialState});
-
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="">name</label>
         <input value={form.name} type="text" name="name" />
@@ -23,6 +25,7 @@ const RegisterPage = () => {
       <div>
         <label htmlFor="">email</label>
         <input value={form.email} type="email" name="email" />
+        <button type='submit' >Submit</button>
       </div>
     </form>
   );

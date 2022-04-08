@@ -53,7 +53,7 @@ const App = () => {
       <Filter handleChange={handleChange} />
       
       {loading ? <Loading/>: <><ContactList names={filteredContacts()} removeHuman={removeContact}/></>}
-      <RegisterPage />
+      
     </div>
    
    
