@@ -21,7 +21,7 @@ const ContactForm =(props) => {
       ...book,
       [name]: value,
     });
-  });
+  },[]);
   
     
     return (
