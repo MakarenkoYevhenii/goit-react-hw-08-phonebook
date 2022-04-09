@@ -9,7 +9,7 @@ export const signup=createAsyncThunk(
             const result=await authApi.signup(data)
             return result
         } catch (error) {
-            console.log(error);
+
           return  rejectWithValue(error)
         }
     }
@@ -21,10 +21,10 @@ export const login=createAsyncThunk(
     async(data,{rejectWithValue})=>{
         try {
             const result=await authApi.login(data)
-            console.log(result);
+  
             return result
         } catch (error) {
-            console.log(error);
+
           return  rejectWithValue(error)
         }
     }
@@ -47,7 +47,6 @@ export const logout=createAsyncThunk(
 export const current = createAsyncThunk(
     "auth/current",
     async (_, {getState, rejectWithValue}) => {
-        console.log(getState);
         try {
             const {auth} = getState();
             // if(!auth.token){

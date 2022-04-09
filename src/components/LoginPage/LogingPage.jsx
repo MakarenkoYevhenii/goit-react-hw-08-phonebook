@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/auth-operations';
+import style from './LoginPage.module.css'
 
 const { useState } = require('react');
 const initialState = {
@@ -21,8 +22,9 @@ const LoginPage = () => {
     }));
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <div className={style.wrapper}>
+    <form onSubmit={handleSubmit} className={style.form}>
+      <div className={style.input}>
         <label htmlFor="">email</label>
         <input
           value={form.email}
@@ -31,7 +33,7 @@ const LoginPage = () => {
           name="email"
         />
       </div>
-      <div>
+      <div className={style.input}>
         <label htmlFor="">password</label>
         <input
           value={form.password}
@@ -40,8 +42,9 @@ const LoginPage = () => {
           name="password"
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit"className={style.btn}>Submit</button>
     </form>
+    </div>
   );
 };
 

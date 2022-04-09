@@ -19,7 +19,7 @@ const contactSlise=createSlice({
             [fetchContacts.fulfilled]:(state,{payload})=>{
                 state.items=[...payload];
                 state.loading=false;
-               
+            
             },
             [fetchContacts.rejected]:(state,{payload})=>{
                 state.loading=false;
@@ -32,6 +32,7 @@ const contactSlise=createSlice({
             [addContact.fulfilled]:(state,{payload})=>{
                 state.items.push(payload);
                 state.loading=false;
+
             },
             [addContact.rejected]:(state,{payload})=>{
                 state.loading=false;
@@ -42,14 +43,16 @@ const contactSlise=createSlice({
                 state.error=null;
             },
             [deleteContact.fulfilled]:(state,{payload})=>{
-                console.log(state.items);
                 state.items=state.items.filter(item=>item.id !== payload);
+                console.log(state.items);
+                console.log(payload);
                 state.loading=false;
             },
             [deleteContact.rejected]:(state,{payload})=>{
                 state.loading=false;
                 state.error=payload;
-            }
+            },
+            
         }
 })
 

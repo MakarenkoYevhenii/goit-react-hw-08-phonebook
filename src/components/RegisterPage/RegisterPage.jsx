@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { signup } from 'redux/auth/auth-operations';
 import { getUser } from '../../redux/auth/auth-selectors';
-
+import style from './RegisterPage.module.css'
 
 const initialState = {
   name: '',
@@ -28,24 +28,26 @@ const RegisterPage = () => {
     }));
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="">name</label>
+  return ( 
+    <div className={style.wrapper}>
+    <form onSubmit={handleSubmit} className={style.form}>
+      <div className={style.input}>
+        <label htmlFor="">Name</label>
         <input value={form.name} onChange={handleChange} type="text" name="name" />
       </div>
 
-      <div>
-        <label htmlFor="">password</label>
-        <input value={form.password} onChange={handleChange}  type="password" name="password" />
+      <div className={style.input}>
+        <label htmlFor="">Password</label>
+        <input value={form.password} onChange={handleChange} type="password" name="password" />
       </div>
-      <div>
-        <label htmlFor="">email</label>
+      <div className={style.input}>
+        <label htmlFor="">E-mail</label>
         <input value={form.email}  onChange={handleChange}  type="email" name="email" />
        
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className={style.btn}>Submit</button>
     </form>
+    </div>
   );
 };
 

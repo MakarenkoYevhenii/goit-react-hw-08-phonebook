@@ -8,19 +8,26 @@ import {getAllContacts,getLoading} from "../redux/contacts/contacts-selectors"
 import { useState,useEffect } from 'react';
 import Loading from './Loading/Loading';
 import { current } from "../redux/auth/auth-operations";
-// import { useEffect } from "react"
-// import { useDispatch } from "react-redux"
-// import { current } from "./redux/auth/auth-operations"
 const App = () => {
     const [filter,setFilter]=useState('')
    
     const contacts=useSelector(getAllContacts,shallowEqual)
     const dispatch=useDispatch();
     const loading=useSelector(getLoading,shallowEqual)
-    useEffect(() => {
-      dispatch(operations.fetchContacts());
+  
+
+    
+
+    
+    useEffect(()=> {
+      dispatch(current());
     }, [dispatch])
     
+    useEffect(() => {
+      
+      dispatch(operations.fetchContacts());
+    }, [dispatch])
+
    
     const addContact=(data)=> {
       const nameCheked=contacts.find((e)=>{
@@ -39,7 +46,10 @@ const App = () => {
     }
 
   
-    const removeContact = (id)=> dispatch(operations.deleteContact(id))
+    const removeContact = (id)=> {
+      dispatch(operations.deleteContact(id))}
+ 
+
     
     
     const handleChange=({target})=>{
@@ -49,6 +59,8 @@ const App = () => {
 
   return (
    <div className="registration__form">
+      {}
+   
       <h1>Phonebook</h1>
       <ContactForm addContact={addContact} />
       <h2>Contacts</h2>

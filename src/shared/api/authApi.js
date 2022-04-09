@@ -21,7 +21,8 @@ const logout =async()=>{
 }
 const getCurrent = async (token) => {
     addToken(token);
-    const {data: result} = await axios.get("https://connections-api.herokuapp.com/users/current");
+    const {data: result} = await axios.get("https://connections-api.herokuapp.com/users/current/");
+
     return result;
 }
 

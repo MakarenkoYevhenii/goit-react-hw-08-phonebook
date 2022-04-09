@@ -31,13 +31,16 @@ export const deleteContact = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const result = await contactsAPI.deleteContact(id);
-      return result.id;
+      return id
+      // return result;
     } catch (error) {
       alert(`Sorry can't remove users ${error.message}`)
       return rejectWithValue(error);
     }
   }
 );
+
+
 
 const operations = {
   addContact,

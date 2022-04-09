@@ -1,0 +1,26 @@
+.link
+{
+    color:black;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 30px;
+
+}
+.header__menu{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.logoutBTN{
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.userName{
+    color: #4CAF50;
+}
