@@ -15,13 +15,13 @@ const ContactForm =(props) => {
     props.addContact(book)
   };
 
-  const handleChange =useCallback( e => {
+  const handleChange = e => {
     const { name, value } = e.target;
     setBook({
       ...book,
       [name]: value,
     });
-  },[]);
+  };
   
     
     return (
