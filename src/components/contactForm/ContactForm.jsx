@@ -1,6 +1,9 @@
 import styles from '../contactForm/contactForm.module.css'
 import PropTypes from 'prop-types';
 import { useState,memo } from 'react';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState={
   name:"",  
@@ -25,10 +28,12 @@ const ContactForm =(props) => {
   
     
     return (
-         <form onSubmit={handleSubmit} className={styles.form__style}>
+      <>
+
+         <Form onSubmit={handleSubmit} className={styles.form__style}>
           <div className={styles.form__registration}>
-            <p>Name</p>
-            <input
+            <Form.Label>Name</Form.Label>
+            <Form.Control
               onChange={handleChange}
               type="text"
               name="name"
@@ -37,8 +42,8 @@ const ContactForm =(props) => {
               required
               className={styles.registration__input}
             />
-            <p>Phone</p>
-            <input
+            <Form.Label>Phone</Form.Label>
+            <Form.Control
               onChange={handleChange}
               type="tel"
               name="number"
@@ -47,9 +52,10 @@ const ContactForm =(props) => {
               required
               className={styles.registration__input}
             />
-            <button type="submit" className={styles.button__submit}>Add Contact</button>
+            <Button variant="primary" type="submit" className={styles.button__submit}>Add Contact</Button>
           </div>
-        </form>     
+        </Form>   
+        </>
     )}
 
 export default memo(ContactForm);

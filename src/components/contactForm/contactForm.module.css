@@ -17,8 +17,12 @@
     border-radius: 20px;
 }
 .form__style{
-    border: 1px solid blue;
+
     width: 300px;
     padding: 5px;
     margin-left: 5px;
+}
+.wrapper
+{
+    width: 400px;
 }

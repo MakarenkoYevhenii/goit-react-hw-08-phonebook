@@ -7,8 +7,9 @@
 .items{
     align-items: baseline;
     margin-bottom: 10px;
-    display: flex
-        
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
 }
 .form__delete__button{
     /* width: 20px; */
