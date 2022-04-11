@@ -32,6 +32,11 @@ const RegisterPage = () => {
     <div className={style.wrapper}>
     <form onSubmit={handleSubmit} className={style.form}>
       <div className={style.input}>
+        <label htmlFor="">E-mail</label>
+        <input value={form.email}  onChange={handleChange}  type="email" name="email" />
+       
+      </div>
+      <div className={style.input}>
         <label htmlFor="">Name</label>
         <input value={form.name} onChange={handleChange} type="text" name="name" />
       </div>
@@ -39,11 +44,6 @@ const RegisterPage = () => {
       <div className={style.input}>
         <label htmlFor="">Password</label>
         <input value={form.password} onChange={handleChange} type="password" name="password" />
-      </div>
-      <div className={style.input}>
-        <label htmlFor="">E-mail</label>
-        <input value={form.email}  onChange={handleChange}  type="email" name="email" />
-       
       </div>
       <button type="submit" className={style.btn}>Submit</button>
     </form>

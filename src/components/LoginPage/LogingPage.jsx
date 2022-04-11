@@ -25,7 +25,7 @@ const LoginPage = () => {
     <div className={style.wrapper}>
     <form onSubmit={handleSubmit} className={style.form}>
       <div className={style.input}>
-        <label htmlFor="">email</label>
+        <label htmlFor="">E-mail</label>
         <input
           value={form.email}
           onChange={handleChange}
@@ -34,7 +34,7 @@ const LoginPage = () => {
         />
       </div>
       <div className={style.input}>
-        <label htmlFor="">password</label>
+        <label htmlFor="">Password</label>
         <input
           value={form.password}
           onChange={handleChange}

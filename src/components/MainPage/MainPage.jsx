@@ -1,5 +1,5 @@
 import ContactForm from '../contactForm/ContactForm';
-
+import style from "./MainPage.module.css"
 import ContactList from '../contactList/ContactList';
 import Filter from '../filter/Filter';
 import operations from '../../redux/contacts/contacts-operations';
@@ -51,11 +51,10 @@ const MainPage = () => {
   }
 
   return (
-    <>
-    
+        
    
-   <div className="registration__form">
-      {}
+   <div className={style.wrapper}>
+      
       <h1>Phonebook</h1>
       <ContactForm addContact={addContact} />
       <h2>Contacts</h2>
@@ -65,7 +64,7 @@ const MainPage = () => {
       
     </div>
     
-    </>
+ 
    
    
   );
